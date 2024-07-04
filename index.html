@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kanban Dashboard</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="board">
+			<div class="column">
+				<div class="column-header">To Do</div>
+				<div id="todo" class="task-list" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			</div>
+			<div class="column">
+				<div class="column-header">In Progress</div>
+				<div id="inprogress" class="task-list" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			</div>
+			<div class="column">
+				<div class="column-header">Done</div>
+				<div id="done" class="task-list" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			</div>
+		</div>
+		<button id="add-task-btn">Add Task</button>
+		<button id="add-task-btn1" onclick="deleteTask()">Delete Task</button>
+	</div>
+
+	<!-- Modal -->
+	<div id="modal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Add Task</h2>
+			<form id="task-form">
+				<label for="task-title">Task Title:</label><br>
+				<input type="text" id="task-title" name="task-title" required><br><br>
+				<label for="task-description">Task Description:</label><br>
+				<textarea id="task-description" name="task-description" rows="4" required></textarea><br><br>
+				<button type="submit">Add Task</button>
+			</form>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+
+</html>
